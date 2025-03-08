@@ -6,46 +6,70 @@
     <title>Fairloanscanada: Apply For a Free Quote Today!</title>
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     <link rel="stylesheet" href="/css/style.css"> <!-- Link to external styles (optional) -->
-    <style>
-        /* Ensure iframe fits well */
-        #loanscanada_iframe{
-            width: 1px;
-            min-width: 100%;
-            min-height: 300px;
-            border-radius: 10px;
-        }
-       
-    </style>
 </head>
 <body style="background-color: var(--whitish);">
     <div style="background-color: var(--whitish);">
         <!-- NAVBAR STARTS -->
-            <!-- <div class="navbar-wrapper" > -->
-            <nav class="navbar" style="margin-top: 30px;"   >
-                <div class="container-fluid nev">
-                <a class="navbar-brand" href="/"><img src="/images/logo.svg" alt="logo" class="logo" width="80%"  /></a>         
-                
-                </div>
-            </nav>
-            <!-- </div> -->
+        <nav class="navbar navbar-expand-lg sticky-top ">
+            <div class="container-fluid nev">
+              <a class="navbar-brand" href="/"><img src="/images/logo.svg" alt="logo" class="logo" style="margin-left: -15px;" /></a>
+            </div>
+        </nav>
         <!-- NAVBAR ENDS -->
     
         <!-- LoansCanada Iframe -->
-        <div style="text-align:center; margin-top: 20px;">
-            <iframe id="loanscanada_iframe"
-                    src="https://loanscanada.ca/app/iframe?affiliate_id=1882&product_names=personal_loan&bgcolor=%23E8F3FF&preselected_product=personal_loan"
-                    frameborder="0"
-                    scrolling="no">
-            </iframe>
-            <a href="https://loanscanada.ca?affiliate_id=1882" rel="nofollow" target="_blank" title="Visit LoansCanada.ca">
-                <small>Visit LoansCanada.ca For More Services</small>
-            </a>
+        <div id="lead-scout-form" style="min-height:450px;max-width:800px;margin:0 auto;box-shadow: 4px 4px 0px 1px #3a3a3a!important;border:solid 2px #3a3a3a;">
         </div>
 
     </div>
-
-
-    <script src="https://loanscanada.ca/app/assets/iframe/lc.js"></script>
+    
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+            var urlParams = new URLSearchParams(window.location.search);
+            var source = urlParams.get('source');
+            var amount = urlParams.get('amount');
+            var id = urlParams.get('id');
+            var affiliate_sub1 = urlParams.get('affiliate_sub1');
+            var affiliate_sub2 = urlParams.get('affiliate_sub2');
+            var affiliate_sub5 = urlParams.get('affiliate_sub5');
+            
+            var leadScoutFormConfig = {
+            "affiliateCode": id ? id : 'kX4p3tPa',
+            "formId": "1",
+            "overrides": {
+                "requestedAmount": {
+                    "max": 2500,
+                    "min": 100,
+                    "step": 100,
+                }
+            },
+            "language": "en",
+            "defaultValues": {
+                "requestedAmount": Number(amount) ? Number(amount) : null
+            },
+            "styles": {
+                "primary": {
+                    "main": "#2A6877",
+                    "dark": "#2A6877",
+                "contrastText": "#ffffff"
+                }
+            },
+            
+            "theme": "light",
+            "extra": {
+                "affiliate_sub1": affiliate_sub1 ? affiliate_sub1 : '365',
+                "affiliate_sub2": affiliate_sub2 ? affiliate_sub2 : 'org',
+                "affiliate_sub5": affiliate_sub5 ? affiliate_sub5 : null,
+                "aff_utm_source": source ? source : ''
+            },
+            "conversion": source === 'fb' ? { type: 'FACEBOOK' } : {}
+            };
+            
+            window.LeadScout = window.LeadScout || {};
+            window.LeadScout.onLoad = function() {
+            window.LeadScout.init(document.getElementById('lead-scout-form'), leadScoutFormConfig);
+            };
+        </script>
+        <script src="https://app.leadscout.ca/library/library.js" async></script>
 
 </body>
 </html>
