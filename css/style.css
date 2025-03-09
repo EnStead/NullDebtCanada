@@ -70,49 +70,6 @@ h3{
 
 /* NAVBAR STYLES */
 
-/* .navbar{
-  padding: 10px 40px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.4) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); 
-  max-width: 1300px;
-  margin: auto;
-  z-index: 11;
-}
-
-.navbar-wrapper {
-  position: fixed;
-  top: 30px;
-  left: 0;
-  width: 100%;
-  background: var(--red); 
-  z-index: 1; 
-  height: 80px; 
-}
-
-.nev{
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-}
-
-.nbDesk{
-  
-  flex: 50% !important;
-  justify-content: space-evenly !important; 
- 
-}
-
-.nav-link{
-  color: var(--dark_blue) !important;
-  font-weight: 500;
-}
-
-.nav-item{
-  padding: 0 10px 0 10px !important;
-}   */
-
 
 .navbar{
   padding: 20px 80px;
@@ -148,7 +105,13 @@ h3{
   display: none;
 }
 
+.nev .navbar-brand{
+  width: 10% !important;
+}
 
+.navbar-brand .logo{
+  width: 100%;
+}
 
 
 .shade{
@@ -431,10 +394,6 @@ h3{
     padding: 10px 10px !important ;
   }
 
-  /* .navbar{
-    padding: 10px 40px;
-
-  } */
   .hero_left{
     padding: 0px 80px 0 !important;  
   }
@@ -444,11 +403,9 @@ h3{
 @media ( max-width:1200px){
  
 
-  /* .navbar{
-    padding: 10px 40px !important;
-    max-width: 1000px !important;
-
-  } */
+  .navbar{
+    padding: 10px 50px !important;
+  }
 
   .hero_left_img {
    width: 30% !important ;
@@ -477,12 +434,7 @@ h3{
 
 @media (max-width:1051px){
 
-  
-  /* .navbar{
-    padding: 10px 40px !important;
-    max-width: 900px !important;
 
-  } */
 
   .hero_left{
     padding: 0px 40px 0 !important;  
@@ -503,6 +455,10 @@ h3{
     width: 500px !important;
   }
 
+  .nev .navbar-brand{
+    width: 20% !important;
+  }
+  
   .aa{
     padding: 0px 0px !important;
   }
@@ -637,10 +593,15 @@ h3{
 
 @media ( max-width:768px){
 
+  .nev .navbar-brand{
+    width: 30% !important;
+  }
+
   /* .navbar{
     padding: 10px 40px !important;
     max-width: 600px !important;
   } */
+
 
   .nbDesk{
     display: none;
@@ -803,7 +764,7 @@ h3{
   }
 
   .navbar{
-    padding: 10px 40px !important;
+    padding: 10px 30px !important;
   }
 
   .hero_btn{
@@ -820,6 +781,10 @@ h3{
 }
 
 @media (max-width: 488px) {
+
+  .navbar{
+    padding: 10px 20px !important;
+  }
 
   .hero h1{
     line-height: 45px !important;
@@ -850,6 +815,10 @@ h3{
 
   .why_sec h2{
     font-size: 18px !important;
+  }
+
+  .why-items .wh_it{
+    padding: 0px  !important;
   }
 
   /* .why_sec img{
@@ -884,11 +853,6 @@ h3{
     font-size: 13px !important;
   }
 
-  /* .footer-bottom {
-    padding: 200px 20px 40px !important;
-    margin-top: 20px !important;
-  } */
-
 
   .ft_btn{
     font-size: 14px !important;
@@ -908,6 +872,33 @@ h3{
   .nv_nv2{
     padding: 0px !important;
     margin-top: 10px !important;
+  }
+
+  .hero_points{
+    font-size: 14px;
+  }
+
+  .dart{
+    width: 30% !important;
+  }
+
+  .ab_bgi{
+    height: 40vh !important;
+  }
+
+  #faq{
+    padding: 30px 8px !important;
+  }
+
+  .nev .navbar-brand{
+    width: 40% !important;
+  }
+
+  .hero_card_frame{
+    display: grid;
+    place-items: center; /* Centers both horizontally & vertically */
+    height: 90vh !important; /* Full viewport height */
+    background-color: var(--off_white);
   }
 
 
@@ -938,7 +929,7 @@ h3{
     padding: 30px 20px 0 !important;  
   }
 
-  .ft, #faq, #why{
+  .ft,#why{
     padding: 10px 20px !important;
   }
   #work{
