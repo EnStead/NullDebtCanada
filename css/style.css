@@ -874,8 +874,14 @@ h3{
     margin-top: 10px !important;
   }
 
-  .hero_points{
+  .hero_opps{
     font-size: 14px;
+  }
+  .opp img{
+    width: 12px;
+  }
+  .opps img{
+    width: 16px;
   }
 
   .dart{
@@ -883,7 +889,7 @@ h3{
   }
 
   .ab_bgi{
-    height: 40vh !important;
+    min-height: 40vh !important;
   }
 
   #faq{
