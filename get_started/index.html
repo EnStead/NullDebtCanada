@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.png">
+    <title>NullDebtCanada: Your Trusted Personal Loans Partner</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Prevent body scrolling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Prevents double scrolling */
+        }
+
+        /*Nav styles */
+        /* Ensure the iframe container fills available space */
+        .iframe-container {
+            width: 100%;
+            height: calc(100vh - 120px); /* Adjust height, assuming navbar height is ~60px */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Make the iframe take full height */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <!-- NAVBAR STARTS -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid nev" style= "margin: auto !important;" >
+            <a class="navbar-brand" href="/" style= "margin: auto !important;" >
+            <img src="/images/logo.svg" alt="logo" class="logo" />
+            </a>
+        </div>
+        </nav>
+    <!-- NAVBAR ENDS -->
+
+    <div class="iframe-container">
+        <!-- Loan Page with Embedded iFrame -->
+        <iframe id="loanIframe"></iframe>
+    </div>
+
+   <script>
+        // Get query parameters from the URL
+        const params = new URLSearchParams(window.location.search);
+        
+        // Extract values (use defaults if missing)
+        const id = params.get("id") || "kX4p3tPa";
+        const sub1 = params.get("affiliate_sub1") || "EA";
+        const sub2 = params.get("affiliate_sub2") || "30";
+        const amount = params.get("amount") || "1000";
+    
+        // Construct the URL for the iframe
+        const loanUrl = `https://creditly.ca/best-rates/?id=${id}&affiliate_sub1=${sub1}&affiliate_sub2=${sub2}&amount=${amount}`;
+    
+        // Set the iframe's src dynamically
+        document.getElementById("loanIframe").src = loanUrl;
+    </script>
+</body>
+</html>

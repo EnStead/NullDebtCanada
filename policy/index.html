@@ -43,7 +43,7 @@
           <a class="navbar-brand" href="/"><img src="/images/logo.svg" alt="logo" class="logo" style="margin-left: -15px;" /></a>
 
           <div class="get_btn_dek" >
-            <a href="https://creditly.ca/best-rates/?id=kX4p3tPa&affiliate_sub1=EA&affiliate_sub2=30&amount=1000" class="get_btn_dek"  style="text-decoration: none; color: var(--white); background-color: var(--green); border-radius: 8px; padding: 10px 40px; font-size: 16px; font-weight: 600; " >Get Loan</a>
+            <a id="loanButton" href="/" class="get_btn_dek"  style="text-decoration: none; color: var(--white); background-color: var(--green); border-radius: 8px; padding: 10px 40px; font-size: 16px; font-weight: 600; " >Get Loan</a>
           </div>
         </div>
       </nav>
@@ -268,36 +268,20 @@
     <!-- BOOTSTRAP -->
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          console.log("Script loaded and running!"); // Debugging log
+      // Set default values or get them from the current page's URL
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id") || "kX4p3tPa";
+      const sub1 = params.get("affiliate_sub1") || "EA";
+      const sub2 = params.get("affiliate_sub2") || "30";
+      const amount = params.get("amount") || "1000";
   
-          function updateURL(buttonId, newUrl) {
-              let button = document.getElementById(buttonId);
-              if (button) {
-                  button.addEventListener("click", function (event) {
-                      event.preventDefault();
-                      console.log(`Redirecting ${buttonId} to:`, newUrl); // Debugging log
-                      window.location.href = newUrl;  // ✅ Redirects while keeping query params
-                  });
-              } else {
-                  console.error(`Button with ID '${buttonId}' not found!`);
-              }
-          }
+      // Create the redirect URL to "get_started.html"
+      const redirectUrl = `/get_started/?id=${id}&affiliate_sub1=${sub1}&affiliate_sub2=${sub2}&amount=${amount}`;
   
-          let baseUrl = "/get-started/"; // ✅ Use absolute path
-          let queryParams = window.location.search; // ✅ Get query params from current URL
-  
-          if (!queryParams) {
-              queryParams = "?source=fb&amount=500&affiliate_sub1=b2c&affiliate_sub2=calls"; // Fallback if no query params
-          }
-  
-          let fullUrl = baseUrl + queryParams; // ✅ Ensure query params are attached
-  
-          updateURL("customLink", fullUrl);
-          updateURL("customLink1", fullUrl);
-          updateURL("customLink2", fullUrl);
-      });
+      // Set the href attribute dynamically
+      document.getElementById("loanButton").href = redirectUrl;
     </script>
+    
 
 
 </body>
